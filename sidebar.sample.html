@@ -1,0 +1,10 @@
+<div class="nowplaying">
+  NOW PLAYING:
+	<?php $nowplaying = now_playing("username"); ?>
+	<a href="<?php echo $nowplaying->url ?>"><img src="<?php echo $nowplaying->img ?>" /></a>
+  <p>
+    <?php echo $nowplaying->title ?><br/>
+    by <?php echo $nowplaying->artist ?><br/>
+    from <?php echo $nowplaying->album ?>
+  </p>
+</div>
