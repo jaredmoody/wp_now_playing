@@ -25,7 +25,7 @@
       $private_key = get_option("now_playing_amzn_private");
       $tag = get_option("now_playing_amzn_tag") ? get_option("now_playing_amzn_tag") : "mybl06a-20";
       
-      $pxml = aws_signed_request("com", array("Operation"=>"ItemSearch","SearchIndex"=>"Music","ResponseGroup"=>"Small,Images", "Keywords" => $search, "AssociateTag" => ), $public_key, $private_key);
+      $pxml = aws_signed_request("com", array("Operation"=>"ItemSearch","SearchIndex"=>"Music","ResponseGroup"=>"Small,Images", "Keywords" => $search, "AssociateTag" => $tag), $public_key, $private_key);
       
       if ($pxml === False)
       {
